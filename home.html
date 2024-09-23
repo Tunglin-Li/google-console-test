@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>開發人員工具測驗</title>
+    <style>
+      body {
+        background-color: #e4f4f4;
+        font-family: sans-serif;
+      }
+
+      .green {
+        color: green;
+      }
+      .red {
+        color: red;
+      }
+
+      .quiz-item {
+        margin-bottom: 1em;
+      }
+
+      h1 {
+        color: #004458;
+        font-size: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>開發人員工具測驗</h1>
+    <p>來檢驗看看你是否會使用開發人員工具吧！</p>
+
+    <hr />
+    <div class="quiz">
+      <div class="quiz-item">
+        <form onsubmit="checkAnswer1(event)">
+          <div class="question">
+            1. 請問 body 背景色是什麼顏色的？(記得前面加上 #)
+          </div>
+          <input type="text" id="answer1" />
+          <button type="submit">送出</button>
+        </form>
+        <div id="result1"></div>
+      </div>
+
+      <div class="quiz-item">
+        <form onsubmit="checkAnswer2(event)">
+          <div class="question">
+            2. h1 的字體色彩色碼是多少？(記得前面加上 #)
+          </div>
+          <input type="text" id="answer2" />
+          <button type="submit">送出</button>
+        </form>
+        <div id="result2"></div>
+      </div>
+
+      <div class="quiz-item">
+        <form onsubmit="checkAnswer3(event)">
+          <div class="question">3. h1 的字體大小是多少？(記得寫單位)</div>
+          <input type="text" id="answer3" />
+          <button type="submit">送出</button>
+        </form>
+        <div id="result3"></div>
+      </div>
+
+      <div class="quiz-item">
+        <form onsubmit="checkAnswer4(event)">
+          <div class="question">4. p 的字型是什麼？</div>
+          <input type="text" id="answer4" />
+          <button type="submit">送出</button>
+        </form>
+        <div id="result4"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function checkAnswer1(event) {
+      event.preventDefault();
+      var answer = document.getElementById("answer1").value;
+      var resultElement = document.getElementById("result1");
+
+      if (answer.toLowerCase() === "#e4f4f4") {
+        resultElement.innerHTML = "答對了！";
+        resultElement.classList.add("green");
+        resultElement.classList.remove("red");
+      } else {
+        resultElement.innerHTML = "答錯了！";
+        resultElement.classList.add("red");
+        resultElement.classList.remove("green");
+      }
+    }
+
+    function checkAnswer2(event) {
+      event.preventDefault();
+      var answer = document.getElementById("answer2").value;
+      var resultElement = document.getElementById("result2");
+
+      if (answer.toLowerCase() === "#004458") {
+        resultElement.innerHTML = "答對了！";
+        resultElement.classList.add("green");
+        resultElement.classList.remove("red");
+      } else {
+        resultElement.innerHTML = "答錯了！";
+        resultElement.classList.add("red");
+        resultElement.classList.remove("green");
+      }
+    }
+
+    function checkAnswer3(event) {
+      event.preventDefault();
+      var answer = document.getElementById("answer3").value;
+      var resultElement = document.getElementById("result3");
+
+      if (answer.toLowerCase() === "50px") {
+        resultElement.innerHTML = "答對了！";
+        resultElement.classList.add("green");
+        resultElement.classList.remove("red");
+      } else {
+        resultElement.innerHTML = "答錯了！";
+        resultElement.classList.add("red");
+        resultElement.classList.remove("green");
+      }
+    }
+
+    function checkAnswer4(event) {
+      event.preventDefault();
+      var answer = document.getElementById("answer4").value;
+      var resultElement = document.getElementById("result4");
+
+      if (answer.toLowerCase() === "sans-serif") {
+        resultElement.innerHTML = "答對了！";
+        resultElement.classList.add("green");
+        resultElement.classList.remove("red");
+      } else {
+        resultElement.innerHTML = "答錯了！";
+        resultElement.classList.add("red");
+        resultElement.classList.remove("green");
+      }
+    }
+  </script>
+</html>
